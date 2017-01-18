@@ -53,12 +53,35 @@ public class OperationTest {
         operation.setNumberA(10.0);
         operation.setNumberB(10.0);
         System.out.println(operation.getResult());
+    }
 
+    /**
+     * Config test.
+     * 使用配置工具类读取配置文件信息,避免修改客户端代码
+     * @throws Exception the exception
+     */
+    @Test
+    public void configTest() throws Exception {
         // 使用配置文件获取操作符
         String operationType = ConfigUtil.getOperationType();
-        operation = OperationFactory.createOperation(operationType);
+        com.dong4j.simple.Operation operation = OperationFactory.createOperation(operationType);
         operation.setNumberA(101.0);
         operation.setNumberB(10.0);
+        System.out.println(operation.getResult());
+    }
+
+    /**
+     * Operation static test.
+     * 将创建具体操作类的静态方法简化到 Operation 类中, 去掉 OperationFactory.
+     * @throws Exception the exception
+     */
+    @Test
+    public void operationStaticTest() throws Exception {
+        // 使用配置文件获取操作符
+        String operationType = ConfigUtil.getOperationType();
+        com.dong4j.simple.Operation operation = com.dong4j.simple.Operation.createOperation(operationType);
+        operation.setNumberA(110.0);
+        operation.setNumberB(11.0);
         System.out.println(operation.getResult());
     }
 }
