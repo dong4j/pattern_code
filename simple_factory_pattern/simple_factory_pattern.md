@@ -373,15 +373,15 @@ public class OperationTest {
 ## 引用
 
 http://blog.csdn.net/lovelion/article/details/9300337
+
 http://blog.csdn.net/lovelion/article/details/9300549
+
 http://blog.csdn.net/lovelion/article/details/9300657
+
 http://blog.csdn.net/lovelion/article/details/9300731
 
 ---
 
-## 代码下载
-
-https://github.com/dong4j/pattern_code
 
 
 
