@@ -3,7 +3,7 @@
 
 ## 创建者模式
 
-1. simple_facroty_pattern 简单工厂
+1. [simple_facroty_pattern 简单工厂](https://github.com/dong4j/pattern_code/blob/master/simple_factory_pattern/simple_factory_pattern.md)
 2. factory_method_pattern 工厂方法
 3. abstract_factory_pattern 抽象工厂
 4. singleton_pattern 单例模式
