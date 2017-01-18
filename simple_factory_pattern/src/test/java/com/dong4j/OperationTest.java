@@ -1,6 +1,5 @@
 package com.dong4j;
 
-import com.dong4j.example.Operation;
 import com.dong4j.simple.OperationFactory;
 import org.junit.Test;
 
@@ -17,10 +16,14 @@ public class OperationTest {
      */
     @Test
     public void exampleTest() throws Exception {
-        System.out.println(Operation.getResult("+",101.0,10.0));
-        System.out.println(Operation.getResult("-",-0.01,100.0));
-        System.out.println(Operation.getResult("*",20.0,0.0));
-        System.out.println(Operation.getResult("/",10.0,0.0));
+        com.dong4j.example.Operation operation1 = new com.dong4j.example.Operation("+",101.0,10.0);
+        System.out.println(operation1.getResult());
+        com.dong4j.example.Operation operation2 = new com.dong4j.example.Operation("-",-0.01,100.0);
+        System.out.println(operation2.getResult());
+        com.dong4j.example.Operation operation3 = new com.dong4j.example.Operation("*",20.0,0.0);
+        System.out.println(operation3.getResult());
+        com.dong4j.example.Operation operation4 = new com.dong4j.example.Operation("/",10.0,0.0);
+        System.out.println(operation4.getResult());
     }
 
     /**

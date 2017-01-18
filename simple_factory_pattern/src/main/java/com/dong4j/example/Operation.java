@@ -7,9 +7,17 @@ package com.dong4j.example;
  * Description:
  */
 public class Operation {
-    public static double getResult(String operate, double numberA, double numberB){
+    private double numberA;
+    private double numberB;
+    private String operateType;
+    public Operation(String operateType, double numberA, double numberB){
+        this.numberA = numberA;
+        this.numberB = numberB;
+        this.operateType = operateType;
+    }
+    public double getResult(){
         double result = 0;
-        switch (operate) {
+        switch (operateType) {
             case "+":
                 return numberA + numberB;
             case "-":
