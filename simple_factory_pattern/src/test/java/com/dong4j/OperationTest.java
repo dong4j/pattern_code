@@ -1,6 +1,7 @@
 package com.dong4j;
 
 import com.dong4j.simple.OperationFactory;
+import com.dong4j.utils.ConfigUtil;
 import org.junit.Test;
 
 /**
@@ -50,7 +51,14 @@ public class OperationTest {
 
         operation = OperationFactory.createOperation("/");
         operation.setNumberA(10.0);
-        operation.setNumberB(0.0);
+        operation.setNumberB(10.0);
+        System.out.println(operation.getResult());
+
+        // 使用配置文件获取操作符
+        String operationType = ConfigUtil.getOperationType();
+        operation = OperationFactory.createOperation(operationType);
+        operation.setNumberA(101.0);
+        operation.setNumberB(10.0);
         System.out.println(operation.getResult());
     }
 }
