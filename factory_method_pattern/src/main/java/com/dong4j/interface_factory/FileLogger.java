@@ -1,4 +1,4 @@
-package com.dong4j.factory;
+package com.dong4j.interface_factory;
 
 /**
  * Created by: dong4j.

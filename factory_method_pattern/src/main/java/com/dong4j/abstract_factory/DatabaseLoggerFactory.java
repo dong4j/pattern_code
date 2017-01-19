@@ -1,4 +1,4 @@
-package com.dong4j.factory;
+package com.dong4j.abstract_factory;
 
 /**
  * Created by: dong4j.
@@ -6,7 +6,7 @@ package com.dong4j.factory;
  * Time: 12:29.
  * Description: 具体工厂
  */
-public class DatabaseLoggerFactory implements LoggerFactory{
+public class DatabaseLoggerFactory extends LoggerFactory {
     @Override
     public Logger createLogger() {
         return new DatabaseLogger();
