@@ -4,7 +4,7 @@
 ## 创建者模式
 
 1. [简单工厂 simple_facroty_pattern](https://github.com/dong4j/pattern_code/blob/master/simple_factory_pattern/simple_factory_pattern.md)
-2. 工厂方法 factory_method_pattern 
+2. [工厂方法 factory_method_pattern](https://github.com/dong4j/pattern_code/blob/master/factory_method_pattern/factory_method_pattern.md)
 3. 抽象工厂 abstract_factory_pattern 
 4. 单例模式 singleton_pattern 
 5. 原型模式 prototype_pattern 
