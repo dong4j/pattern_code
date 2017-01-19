@@ -1,5 +1,7 @@
 package com.dong4j;
 
+import com.dong4j.homework.Graphics;
+import com.dong4j.homework.UnSupportedShapeException;
 import com.dong4j.simple.OperationFactory;
 import com.dong4j.utils.ConfigUtil;
 import org.junit.Test;
@@ -63,7 +65,7 @@ public class OperationTest {
     @Test
     public void configTest() throws Exception {
         // 使用配置文件获取操作符
-        String operationType = ConfigUtil.getOperationType();
+        String operationType = ConfigUtil.getType("operationType");
         com.dong4j.simple.Operation operation = OperationFactory.createOperation(operationType);
         operation.setNumberA(101.0);
         operation.setNumberB(10.0);
@@ -78,10 +80,18 @@ public class OperationTest {
     @Test
     public void operationStaticTest() throws Exception {
         // 使用配置文件获取操作符
-        String operationType = ConfigUtil.getOperationType();
+        String operationType = ConfigUtil.getType("operationType");
         com.dong4j.simple.Operation operation = com.dong4j.simple.Operation.createOperation(operationType);
         operation.setNumberA(110.0);
         operation.setNumberB(11.0);
         System.out.println(operation.getResult());
+    }
+
+    @Test
+    public void graphicsTest() throws UnSupportedShapeException {
+        String type = ConfigUtil.getType("type");
+        Graphics graphics = Graphics.createGraphics(type);
+        graphics.draw();
+        graphics.erase();
     }
 }

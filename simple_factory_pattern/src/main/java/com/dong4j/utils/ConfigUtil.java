@@ -10,7 +10,7 @@ import java.util.Properties;
  * Description:
  */
 public class ConfigUtil {
-    public static String getOperationType(){
+    public static String getType(String type){
         Properties properties = new Properties();
         try {
             // config.properties 必须放在 classpath 路径下才能加载.
@@ -18,6 +18,6 @@ public class ConfigUtil {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return properties.getProperty("operationType");
+        return properties.getProperty(type);
     }
 }
