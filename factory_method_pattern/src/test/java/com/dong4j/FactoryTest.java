@@ -1,5 +1,6 @@
 package com.dong4j;
 
+import com.dong4j.homework.PictureFactory;
 import com.dong4j.interface_factory.Logger;
 import com.dong4j.utils.ConfigUtil;
 import org.junit.Test;
@@ -36,5 +37,18 @@ public class FactoryTest {
     public void abstractFactoryTest() throws ClassNotFoundException, IllegalAccessException, InstantiationException {
         com.dong4j.abstract_factory.LoggerFactory loggerFactory = (com.dong4j.abstract_factory.LoggerFactory)ConfigUtil.getType("loggerType2");
         loggerFactory.writeLog();
+    }
+
+    /**
+     * Homework test.
+     * 使用工厂方法模式实现
+     * @throws IllegalAccessException the illegal access exception
+     * @throws InstantiationException the instantiation exception
+     * @throws ClassNotFoundException the class not found exception
+     */
+    @Test
+    public void homeworkTest() throws IllegalAccessException, InstantiationException, ClassNotFoundException {
+        PictureFactory pictureFactory = (PictureFactory) ConfigUtil.getType("pictureType");
+        pictureFactory.getPicture().readInfo();
     }
 }

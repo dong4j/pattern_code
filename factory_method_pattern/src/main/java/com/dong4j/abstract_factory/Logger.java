@@ -6,8 +6,6 @@ package com.dong4j.abstract_factory;
  * Time: 12:26.
  * Description: 抽象产品
  */
-public class Logger {
-    public void writeLog(){
-        System.out.println("持久化日志");
-    }
+public interface Logger {
+    void writeLog();
 }

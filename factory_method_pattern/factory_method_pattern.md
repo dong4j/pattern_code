@@ -7,10 +7,15 @@ cat命令连接文件并打印到标准输出设备上，cat经常用来显示�
 
 ```
 -n或-number：有1开始对所有输出的行数编号；
+
 -b或--number-nonblank：和-n相似，只不过对于空白行不编号；
+
 -s或--squeeze-blank：当遇到有连续两行以上的空白行，就代换为一行的空白行；
+
 -A：显示不可打印字符，行尾显示“$”；
+
 -e：等价于"-vE"选项；
+
 -t：等价于"-vT"选项；
 ```
 
@@ -165,7 +170,7 @@ type=tri
 
 > 定义一个用于创建对象的接口, 让子类决定实例化哪一个类. 工厂方法使一个类的实例化延迟到其子类.
 
-![](http://7xr3bu.com1.z0.glb.clouddn.com/2017-01-19-14847982342012.png)
+![](http://7xr3bu.com1.z0.glb.clouddn.com/2017-01-20-14849159502467.png)
 
 - 抽象工厂: 申明了工厂方法,用于返回一个产品.所有的具体工厂类都要事先这个接口
 - 具体工厂: 是抽象工厂的子类,实现了工厂方法,并由客户端调用,返回一个具体产品类实例.
@@ -201,7 +206,7 @@ Product product = factory.createProduct();
 
 记录 log 的方式现在有2种,一种是写入文件, 一种是写入数据库
 
-![](http://7xr3bu.com1.z0.glb.clouddn.com/2017-01-19-14847996924427.png)
+![](http://7xr3bu.com1.z0.glb.clouddn.com/2017-01-20-14849159693824.jpg)
 
 
 代码:
@@ -235,26 +240,24 @@ class FileLoggerFactory implements LoggerFactory{
 抽象产品类
 
 ```java
-public class Logger {
-    public void writeLog(){
-        System.out.println("持久化日志");
-    }
+public interface Logger {
+    void writeLog();
 }
 ```
 
 具体产品类
 
 ```java
-class DatabaseLoggerFactory implements LoggerFactory{
+class FileLogger implements Logger{
     @Override
-    public Logger createLogger() {
-        return new DatabaseLogger();
+    public void writeLog(){
+        System.out.println("将日志写入文件");
     }
 }
-class FileLoggerFactory implements LoggerFactory{
+class DatabaseLogger implements Logger{
     @Override
-    public Logger createLogger() {
-        return new FileLogger();
+    public void writeLog(){
+        System.out.println("将日志写入数据库");
     }
 }
 ```
@@ -336,7 +339,6 @@ public abstract class LoggerFactory {
 
 2. 抽象工厂类通过其子类来指定创建哪个对象。在工厂方法模式中，对于抽象工厂类只需要提供一个创建产品的 接口，而由其子类来确定具体要创建的对象，利用面向对象的多态性和里氏代换原则，在程序运行时，子类对象 将覆盖父类对象，从而使得系统更容易扩展。
 
-
 ## 引用
 
 http://blog.csdn.net/lovelion/article/details/9306457
@@ -346,3 +348,5 @@ http://blog.csdn.net/lovelion/article/details/9306745
 http://blog.csdn.net/lovelion/article/details/9307137
 
 http://blog.csdn.net/lovelion/article/details/9307561
+
+
